@@ -28,7 +28,7 @@ wot trajectory_trends --tmap . --cell_days days.txt --cell_set cell_sets.gmt --m
 The result of trajectory trends are mean value of one tip's ancestors and descendants. Specifically, given time point, and the tips in this time point, we will find each tip's ancestors and descendants, and calculate their mean value of each gene expression rate.
 
 So, we can plot the data, here's an example to plot the 
-Tip1's gene expression of gene 2,3,4 and different time point.
+Tip1's gene expression rate (cells of Tip1 from day 100) for gene 2,3,4 at different time point.
 
 ```python
 import wot.io
