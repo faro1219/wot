@@ -70,4 +70,25 @@ a.nostyle, a.nostyle:hover, a.nostyle:active, a.nostyle:focus {
 
 .main-content {
   padding: 2rem 1rem;
+<<<<<<< HEAD
+=======
+
+  h1::after, h2::after, h3::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.main-content .btn-example {
+  margin: 1rem 0 0 0;
+  float: right;
+  display: inline-block;
+>>>>>>> 67a3be242b4b13ab9d9da1e2979717acc3b4515c
 }

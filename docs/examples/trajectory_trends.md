@@ -5,12 +5,20 @@ location: Examples
 ---
 
 # Plot Trajectory Trends
+<<<<<<< HEAD
+=======
+------------------------
+>>>>>>> 67a3be242b4b13ab9d9da1e2979717acc3b4515c
 
 If we don't have real data and cell sets, we can generate the simulate data and cell sets following the steps in [generate data](generate_data) and [plotting_cell_sets](plotting_cell_sets).
 
 ## Calculate the Transport Maps
 
+<<<<<<< HEAD
 We can get the transport maps through [optimal_transport](optimal_transport).
+=======
+We can get the transport maps through [optimal_transport]({{site.baseurl}}/cli_documentation#transport-maps).
+>>>>>>> 67a3be242b4b13ab9d9da1e2979717acc3b4515c
 
 ```sh
 wot optimal_transport --matrix matrix.txt \
@@ -19,7 +27,11 @@ wot optimal_transport --matrix matrix.txt \
 
 ## Calculate the Trajecotory Trends
 Now we can get the trajectory trends through
+<<<<<<< HEAD
 [trajectory_trends](trajectory_trends).
+=======
+[trajectory_trends]({{site.baseurl}}/cli_documentation#trajectory-trends).
+>>>>>>> 67a3be242b4b13ab9d9da1e2979717acc3b4515c
 ```sh
 wot trajectory_trends --tmap . --cell_days days.txt --cell_set cell_sets.gmt --matrix matrix.txt
 ```
@@ -63,3 +75,17 @@ plt.show()
 plt.close()
 ```
 
+<<<<<<< HEAD
+=======
+
+
+## The Plot
+
+Here are some examples of plot we get.
+
+
+
+![Trajectory Trends for Tip 1]({{site.baseurl}}/images/trajectory_trends_1.png)
+![Trajectory Trends for Tip 2]({{site.baseurl}}/images/trajectory_trends_2.png)
+![Trajectory Trends for Tip 3]({{site.baseurl}}/images/trajectory_trends_3.png)
+>>>>>>> 67a3be242b4b13ab9d9da1e2979717acc3b4515c

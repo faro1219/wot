@@ -250,6 +250,13 @@ def main(argv):
         subsample_writer.flush()
 
     if args.progress:
+<<<<<<< HEAD
         wot.io.output_progress(0)
     ot_helper.compute_transport_maps(transport_map_callback)
+=======
+        wot.io.init_progress()
+    ot_helper.compute_transport_maps(transport_map_callback)
+    if args.progress:
+        wot.io.finalize_progress()
+>>>>>>> 67a3be242b4b13ab9d9da1e2979717acc3b4515c
     subsample_writer.close()
