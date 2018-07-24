@@ -228,11 +228,6 @@ wot trajectory --tmap . --cell_days days.txt \
   </tbody>
 </table>
 
-<<<<<<< HEAD
-### Ancestor census ###
-
-### Trajectory trends ###
-=======
 
 <a class="btn-info rounded border-0 px-3 py-1 btn-example nounderline"
  href="{{site.baseurl}}/examples/ancestor_census">See example code</a>
@@ -289,7 +284,6 @@ for more information.
 
 ### Trajectory trends ###
 
->>>>>>> 67a3be242b4b13ab9d9da1e2979717acc3b4515c
 Given **cell sets**, the mean value of different tips' ancestors at each time point will be calculated through trajectory trends.
 
 You can select a **cell set** by specifying a [cell set file](#cellset_file).
@@ -332,13 +326,64 @@ wot trajectory_trends --tmap . --cell_days days.txt --cell_set cell_sets.gmt --m
   </tbody>
 </table>
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 67a3be242b4b13ab9d9da1e2979717acc3b4515c
 ### Shared ancestry ###
 
 ### Trajectory differential expression ###
+you can compare two ancestor distributions through local enrichment. 
+
+The ancestor distributions can be two tips' or one tip's but at different time point. Now we have different ways to give the score that measures the difference between two distributions. Besides, the `matrix.txt` and `matrix1.txt`  should be the form of the result of trajectory trends.
+```sh
+wot optimal_local_enrichment --matrix1 matrix.txt \
+(--matrix2 matrix2.txt) --score t_test \
+--comparisons comapre.txt (--gsea C1)
+```
+When we run the cmd, we can get the file like `timepoint.rnk` or `timepoint1_timepoint2.rnk` including each gene 's score.
+
+<table class="table table-hover" style="display: table">
+  <thead class="thead-light">
+    <tr>
+      <th>Option</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>--matrix1</b></td>
+      <td>A matrix with cells on rows and features, such as
+                        genes or pathways on columns See <a href="#matrix_file">formats</a></td>
+    </tr> 
+    <tr>
+      <td><b>--score</b></td>
+      <td>Method to compute differential gene expression score.
+                        Choices are signal to noise, mean difference, t-test,
+                        and fold change.{s2n,mean_difference,fold_change,t_test}
+    </tr>
+           <tr>
+      <td>--matrix2</td>
+      <td>A matrix with cells on rows and features, such as
+                        genes or pathways on columns See <a href="#matrix_file">formats</a></td>
+    </tr>
+          <td>--gsea</td>
+      <td>Run (<a href="http://s
+                        oftware.broadinstitute">GSEA</a> on the specified MSigDB collections.<br/>
+                         H (hallmark gene sets), C1 (positional gene sets),
+                        C2 (curated gene sets), C3 (motif gene sets), C4
+                        (computational gene sets), C5 (GO gene sets), C6
+                        (oncogenic signatures), C7 (immunologic signatures)
+      </td>
+    </tr>
+       </tr>
+           <tr>
+      <td>--comparisons</td>
+      <td>Comparisons to generate ranked lists for. By default,
+                        for one matrix signatures are created for all
+                        consecutive timepoints. For two matrices for all
+                        matching timepoints.</td>
+    </tr>
+
+  </tbody>
+</table>
 
 ### Local regulatory model ###
 
@@ -599,15 +644,9 @@ tab-separated list composed as follows :
 Example:
 
 <table class="table" style="display: table">
-<<<<<<< HEAD
-<tr><td>Tip1</td><td>The first tip</td><td>gene_2</td><td>gene_5</td></tr>
-<tr><td>Tip2</td><td>The second tip</td><td>gene_3</td></tr>
-<tr><td>Tip3</td><td>The third tip</td><td>gene_4</td><td>gene_5</td></tr>
-=======
 <tr><td>Tip1</td><td>The first tip</td><td>gene_2</td><td>gene_1</td></tr>
 <tr><td>Tip2</td><td>The second tip</td><td>gene_3</td></tr>
 <tr><td>Tip3</td><td>The third tip</td><td>gene_4</td><td>gene_1</td></tr>
->>>>>>> 67a3be242b4b13ab9d9da1e2979717acc3b4515c
 </table>
 
 ##### GMX #####
@@ -621,11 +660,7 @@ Example:
 <tr><td>Tip1</td><td>Tip2</td><td>Tip3</td></tr>
 <tr><td>The first tip</td><td>The second tip</td><td>The third tip</td></tr>
 <tr><td>gene_2</td><td>gene_3</td><td>gene_4</td></tr>
-<<<<<<< HEAD
-<tr><td>gene_5</td><td></td><td>gene_5</td></tr>
-=======
 <tr><td>gene_1</td><td></td><td>gene_1</td></tr>
->>>>>>> 67a3be242b4b13ab9d9da1e2979717acc3b4515c
 </table>
 
 
@@ -650,8 +685,6 @@ with the `--quantile` option. The default value is 0.99, which would
 select the top 1% of each gene. Choosing 0.5 for instance would
 select every cell that has all genes above the median in the population.
 
-<<<<<<< HEAD
-=======
 ### <a name="census_file">Census file</a> ###
 
 Census files are datasets files : tab-separated text files with a header.
@@ -676,7 +709,6 @@ Example:
 </table>
 
 
->>>>>>> 67a3be242b4b13ab9d9da1e2979717acc3b4515c
 ## More documentation ##
 ------------------------------
 
